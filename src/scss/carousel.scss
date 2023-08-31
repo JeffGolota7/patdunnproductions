@@ -1,0 +1,46 @@
+::-webkit-scrollbar {
+  height: 10px; /* height of horizontal scrollbar ← You're missing this */
+  width: 4px; /* width of vertical scrollbar */
+  border: 1px solid #d5d5d5;
+  cursor: pointer;
+}
+.video-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #0f0f0f;
+  .videos-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 85%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    &::-webkit-scrollbar-thumb {
+      background-color: #3cc96b;
+      border-radius: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    .video {
+      max-height: 85%;
+      margin: 0 10px;
+      cursor: grab;
+      background-color: rgb(199, 199, 199);
+      position: relative;
+      &:before {
+        content: "Tap to Play Video";
+        position: absolute;
+        color: #0f0f0f;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        z-index: 100;
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+@font-face {
+  font-family: "Reyhans";
+  src: url("../fonts/reyhans.regular.woff");
+}
+.hero-section {
+  position: relative;
+  height: 440px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/photos/sports/s7.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+.hero-text {
+  letter-spacing: 25px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 200;
+  margin-bottom: 6rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 1050px) {
+  .hero-text {
+    letter-spacing: 20px;
+  }
+}
+.hero-cta:before, .hero-cta:after,
+.hero-cta span:before,
+.hero-cta span:after {
+  display: block;
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+}
+
+.hero-cta {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  position: relative;
+  min-width: 150px;
+  min-height: 30px;
+  margin: 20px;
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 12px 20px;
+  box-sizing: content-box;
+  border: 2px solid transparent;
+  text-align: center;
+  line-height: 30px;
+  transition: 0.5s color;
+}
+.hero-cta:before {
+  top: -2px;
+  left: -2px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transition: 0.5s all;
+}
+.hero-cta:after {
+  top: -2px;
+  right: -2px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transition: 0.5s all;
+}
+.hero-cta span {
+  display: block;
+}
+.hero-cta span:before {
+  bottom: -2px;
+  left: -2px;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transition: 0.5s all;
+}
+.hero-cta span:after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transition: 0.5s all;
+}
+.hero-cta:hover {
+  color: #fff;
+}
+.hero-cta:hover:before, .hero-cta:hover:after {
+  border-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.hero-cta:hover span:before, .hero-cta:hover span:after {
+  border-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+button:hover span::before,
+button:hover span::after {
+  width: 50px;
+  height: 50px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: -1;
+}
+
+.tagged-posts {
+  display: flex;
+}
+
+.info-section {
+  height: 90vh;
+  background: url("../img/photos/creativelighting/cl2.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-section .info-section-content {
+  width: 80%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-section .info-section-content .pat-smiling {
+  width: auto;
+  height: 100%;
+}
+.info-section .info-section-content .info {
+  background-color: #4e6e58;
+  height: 100%;
+  width: 35%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.info-section .info-section-content .info .about-heading {
+  font-family: "Reyhans", "Ubuntu", sans-serif;
+  color: white;
+  font-size: 60px;
+  margin: 0;
+}
+.info-section .info-section-content .contact-btn {
+  background-color: #3cc96b;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.info-section .info-section-content p {
+  color: white;
+}
+
+.tagged-section {
+  background-color: #0f0f0f;
+  opacity: 0.8;
+  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #0f0f0f 10px), repeating-linear-gradient(rgba(37, 37, 37, 0.3333333333), #252525);
+  padding: 2rem 0;
+}
+.tagged-section .tagged {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tagged-section .tagged-header {
+  font-size: 48px;
+  padding: 2rem 0;
+}
+.tagged-section .tagged-posts {
+  width: 100%;
+  margin: 0 5rem;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+}
+.tagged-section .post {
+  margin: auto 1rem;
+}
+.tagged-section h1 {
+  margin: 0;
+  font-family: "Reyhans", "Ubuntu", sans-serif;
+  color: white;
+}
+
+.videos-section {
+  height: 70vh;
+}
+
+@media (max-width: 801px) {
+  .hero-section .hero-text {
+    letter-spacing: normal;
+  }
+  .videos-section {
+    width: 100%;
+    position: relative;
+    background-color: #0f0f0f;
+  }
+  .videos-section:before {
+    position: absolute;
+    white-space: nowrap;
+    content: "Drag Sideways to View My Videos";
+    font-family: "Ubuntu" sans-serif;
+    color: white;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .videos-section .video-carousel {
+    width: 100%;
+  }
+  .videos-section .video-carousel .videos-container {
+    width: 100%;
+  }
+  .info-section {
+    padding: 2rem 0;
+    height: auto;
+  }
+  .info-section .info-section-content {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 !important;
+  }
+  .info-section .info-section-content img,
+  .info-section .info-section-content .info {
+    width: 100%;
+  }
+  .info-section .info-section-content .info {
+    width: 80%;
+    margin-top: 1rem;
+    padding: 2rem;
+  }
+  .info-section .info-section-content .pat-smiling {
+    width: 80%;
+    height: auto;
+  }
+  .tagged-section .tagged-posts {
+    grid-template-columns: 1fr;
+    margin: 0;
+    overflow-y: scroll;
+    height: 25%;
+    width: 80%;
+  }
+}
