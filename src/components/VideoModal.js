@@ -7,7 +7,7 @@ export default function Modal({
   videoToDisplay,
   updateVideoToDisplay,
 }) {
-  const [videoSet, updateVideoSet] = useState(videos);
+  const videoSet = videos;
 
   function handleOnClick(increment) {
     if (videoSet !== []) {
@@ -44,7 +44,7 @@ export default function Modal({
           updateVideoToDisplay();
         }
       });
-  }, []);
+  }, [updateVideoToDisplay]);
 
   return (
     <div className="video-modal-container">

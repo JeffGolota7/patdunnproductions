@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { InstagramEmbed } from "react-social-media-embed";
 import Carousel from "../components/Carousel";

@@ -57,7 +57,7 @@ export default function Carousel() {
     carousel.addEventListener("mouseup", dragStop);
     carousel.addEventListener("mouseleave", dragStop);
     carousel.addEventListener("touchend", dragStop);
-  }, []);
+  }, [isDragStart]);
   return (
     <div className="video-carousel">
       {videoToDisplay && (

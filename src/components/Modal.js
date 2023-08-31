@@ -58,7 +58,7 @@ export default function Modal({
           updateImageToDisplay();
         }
       });
-  }, []);
+  }, [activeFilters, images, updateImageToDisplay]);
 
   return (
     <div className="modal-container">

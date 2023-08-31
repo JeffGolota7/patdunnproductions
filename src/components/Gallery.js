@@ -188,7 +188,7 @@ export default function Gallery() {
             return (
               <div key={imagePath}>
                 {(activeFilters.includes(subdirectory) ||
-                  activeFilters.length == 0) && (
+                  activeFilters.length === 0) && (
                   <LazyLoadImage
                     className="gallery-image"
                     effect="blur"
