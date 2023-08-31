@@ -13,6 +13,7 @@
   height: 100%;
   width: 100%;
   background-color: #0f0f0f;
+  padding: 2rem 0;
 }
 .video-carousel .videos-container {
   display: flex;
@@ -21,6 +22,7 @@
   width: 85%;
   white-space: nowrap;
   overflow-x: scroll;
+  padding: 1rem 0;
 }
 .video-carousel .videos-container::-webkit-scrollbar-thumb {
   background-color: #3cc96b;
@@ -30,19 +32,38 @@
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 .video-carousel .videos-container .video {
-  max-height: 85%;
-  margin: 0 10px;
-  cursor: grab;
-  background-color: rgb(199, 199, 199);
   position: relative;
+  height: 100%;
+  margin-bottom: 0;
 }
-.video-carousel .videos-container .video:before {
-  content: "Tap to Play Video";
+.video-carousel .videos-container .video video {
+  max-height: 100%;
+}
+.video-carousel .videos-container .video .thumbnail-overlay {
   position: absolute;
-  color: #0f0f0f;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.video-carousel .videos-container .video .thumbnail-overlay:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+.video-carousel .videos-container .video .playIcon {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
-  z-index: 100;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+}
+.video-carousel .videos-container .actual-video {
+  margin: 0 10px;
+  cursor: grab;
+  background-color: rgb(29, 29, 29);
+  position: relative;
 }

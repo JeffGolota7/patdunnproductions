@@ -76,15 +76,8 @@
   display: none;
 }
 
-.button {
-  display: block;
-}
-
 @media (max-width: 801px) {
   .modal-container {
-    flex-direction: column;
-  }
-  .video-modal-container {
     flex-direction: column;
   }
   .videos {
@@ -95,10 +88,10 @@
     width: 80% !important;
   }
   .modal-video {
-    width: 80% !important;
+    width: 95% !important;
   }
   .button {
-    display: none !important;
+    display: none;
   }
   .mobile-btns {
     display: block !important;
