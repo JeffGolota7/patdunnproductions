@@ -35,11 +35,13 @@ export default function Carousel() {
     let clickY = 0;
 
     const dragStart = (e) => {
+      console.log(e);
       isDragStart = true;
       updateIsClick(true);
       clickX = e.pageX;
       clickY = e.pageY;
       prevPageX = e.pageX;
+      console.log(e.pageX);
       prevScrollLeft = carousel.scrollLeft;
     };
 
@@ -54,26 +56,28 @@ export default function Carousel() {
         updateIsClick(true);
       }
 
-      const touchX = e.touches[0].clientX;
-      console.log(touchX);
-      let positionDiff = (touchX || e.pageX) - prevPageX;
+      let positionDiff = e.pageX - prevPageX;
       carousel.scrollLeft = prevScrollLeft - positionDiff;
     };
 
     const draggingMobile = (e) => {
-      if (!isDragStart) return;
-      e.preventDefault();
-      const xDiff = Math.abs(e.pageX - clickX);
-      const yDiff = Math.abs(e.pageY - clickY);
-      if (xDiff > 10 || yDiff > 10) {
-        updateIsClick(false);
-      } else {
-        updateIsClick(true);
-      }
+      if (window.innerWidth <= 768) {
+        if (!isDragStart) return;
+        e.preventDefault();
+        const xDiff = Math.abs(e.pageX - clickX);
+        const yDiff = Math.abs(e.pageY - clickY);
+        if (xDiff > 10 || yDiff > 10) {
+          updateIsClick(false);
+        } else {
+          updateIsClick(true);
+        }
 
-      const touchX = e.touches[0].clientX;
-      let positionDiff = touchX - prevPageX;
-      carousel.scrollLeft = prevScrollLeft - positionDiff;
+        const touchX = e.touches[0].clientX;
+        // console.log(touchX);
+        let positionDiff = touchX - prevPageX;
+        // console.log(positionDiff);
+        carousel.scrollLeft = prevScrollLeft - positionDiff;
+      }
     };
 
     const dragStop = () => {
@@ -116,14 +120,15 @@ export default function Carousel() {
               onMouseOut={(event) => {
                 event.target.pause();
               }}
+            ></video>
+            <div
+              className="thumbnail-overlay"
               onClick={() => {
-                console.log(isClick);
                 if (isClick) {
                   updateVideoToDisplay(vid);
                 }
               }}
-            ></video>
-            <div className="thumbnail-overlay">
+            >
               <svg
                 fill="#000000"
                 height="800px"

@@ -64,6 +64,7 @@
 .video-carousel .videos-container .actual-video {
   margin: 0 10px;
   cursor: grab;
+  pointer-events: none;
   background-color: rgb(29, 29, 29);
   position: relative;
 }
