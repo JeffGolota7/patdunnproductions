@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ReactPlayer from "react-player";
 import "../styles/modal.css";
 
