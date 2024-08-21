@@ -13,23 +13,17 @@ import stylesHref from "./global.module.css";
 import { Footer } from "./components/Footer/Footer";
 
 export const links: LinksFunction = () => [
-  ...(cssBundleHref
-    ? [
-        { rel: "stylesheet", href: cssBundleHref },
-        { rel: "icon", type: "image/svg+xml", href: "/pd logo.svg" },
-        { rel: "stylesheet", href: stylesHref as unknown as string },
-
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Sofia&family=Tangerine:wght@400;700&display=swap",
-        },
-      ]
-    : []),
+  { rel: "stylesheet", href: "/global.css" },
+  { rel: "icon", type: "image/svg+xml", href: "/pd-logo.svg" },
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Sofia&family=Tangerine:wght@400;700&display=swap",
+  },
 ];
 
 export default function App() {

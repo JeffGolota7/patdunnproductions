@@ -4,7 +4,7 @@ import { About as AboutComponent } from "~/components/About/About";
 export const meta: MetaFunction = () => {
   return [
     { title: "Pat Dunn Productions - About" },
-    { name: "description", content: "Welcome to Remix!" },
+    { name: "description", content: "Hey! Learn more about me" },
   ];
 };
 
