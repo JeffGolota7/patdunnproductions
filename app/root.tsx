@@ -7,13 +7,13 @@ import {
 } from "@remix-run/react";
 import Navbar from "./components/Navbar/Navbar";
 import type { LinksFunction } from "@remix-run/node";
-import { cssBundleHref } from "@remix-run/css-bundle";
+// import { cssBundleHref } from "@remix-run/css-bundle";
 
-import stylesHref from "./global.module.css";
+// import stylesHref from "./global.module.css";
 import { Footer } from "./components/Footer/Footer";
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: "/global.css" },
+  { rel: "stylesheet", href: "./global.css" },
   { rel: "icon", type: "image/svg+xml", href: "/pd-logo.svg" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
