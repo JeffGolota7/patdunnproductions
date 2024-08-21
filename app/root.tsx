@@ -9,11 +9,10 @@ import Navbar from "./components/Navbar/Navbar";
 import type { LinksFunction } from "@remix-run/node";
 // import { cssBundleHref } from "@remix-run/css-bundle";
 
-import stylesHref from "~/global.css";
+import "~/global.css";
 import { Footer } from "./components/Footer/Footer";
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesHref },
   { rel: "icon", type: "image/svg+xml", href: "/pd-logo.svg" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
