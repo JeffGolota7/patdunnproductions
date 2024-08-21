@@ -112,7 +112,9 @@ export function Gallery() {
                 ) : null;
               })
             : videos.resources.map((video) => (
-                <video key={video.public_id} src={video.url} controls muted />
+                <video key={video.public_id} controls muted>
+                  <source src={`${video.url}#t=0.001`} type="video/mp4" />
+                </video>
               )))}
       </div>
       <Lightbox
