@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar/Navbar";
 import type { LinksFunction } from "@remix-run/node";
 // import { cssBundleHref } from "@remix-run/css-bundle";
 
-import stylesHref from "./global.css";
+import stylesHref from "~/global.css";
 import { Footer } from "./components/Footer/Footer";
 
 export const links: LinksFunction = () => [
