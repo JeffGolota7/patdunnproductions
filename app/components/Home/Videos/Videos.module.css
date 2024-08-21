@@ -1,0 +1,27 @@
+.videoCarousel {
+  height: 700px;
+  display: flex;
+  align-items: center;
+  background-color: #161616;
+  overflow-x: scroll;
+  gap: 16px;
+  padding: 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  video {
+    height: 100%;
+    width: auto;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .videoCarousel {
+    height: 400px;
+  }
+}

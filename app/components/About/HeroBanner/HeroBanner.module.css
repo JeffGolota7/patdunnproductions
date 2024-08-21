@@ -1,0 +1,41 @@
+.heroBannerContainer {
+  background: url("/about-hero.jpg") center right/20% no-repeat;
+  background-position-x: 70%;
+  height: 40vh;
+  background-color: #030301;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
+  color: white;
+  .heroTitle {
+    color: white;
+    font-size: 50px;
+    transform: translateX(-50%);
+    font-weight: 200;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 840px) {
+  .heroBannerContainer {
+    background: url("/about-hero.jpg") center 25% / cover no-repeat;
+    .heroTitle {
+      font-size: 32px;
+      transform: translateX(-25%);
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .heroBannerContainer {
+    .heroTitle {
+      font-size: 32px;
+      transform: translateX(0);
+      text-align: center;
+    }
+  }
+}

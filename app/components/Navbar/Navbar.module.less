@@ -1,0 +1,89 @@
+.navbarContainer {
+  background-color: #0f0f0f;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  padding: 0 10rem;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .navbarLinks {
+    display: flex;
+    gap: 20px;
+  }
+
+  .logo {
+    max-height: 100%;
+    height: 100%;
+    padding: 8px 0;
+    .pdpLogoDesktop {
+      width: 100%;
+      height: 100%;
+    }
+    .pdpLogoMobile {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbarContainer {
+    padding: 0 20px;
+    justify-content: space-between;
+    .navbarLinks {
+      position: absolute;
+      transition: all 0.25s ease-in-out;
+      left: -150%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #3dc96b;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+      }
+      .navbarLink {
+        font-size: 30px;
+      }
+    }
+    .mobileMenu {
+      left: 0;
+    }
+    .logo {
+      .pdpLogoDesktop {
+        display: none;
+      }
+      .pdpLogoMobile {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .hamburger {
+    display: block;
+    .line {
+      display: block;
+      height: 2px;
+      margin-bottom: 8px;
+      background-color: #fff;
+      border-radius: 8px;
+      width: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

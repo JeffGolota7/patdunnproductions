@@ -1,0 +1,43 @@
+.companiesContainer {
+  background: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
+  height: 20vh;
+  padding: 16px 0;
+  text-align: center;
+  .companiesTitle {
+    font-size: 18px;
+  }
+  .companiesCarousel {
+    height: 100%;
+    overflow: hidden;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    .logo {
+      max-height: 60%;
+      left: 100%;
+      width: auto;
+    }
+  }
+}
+
+@media (max-width: 1030px) {
+  .companiesContainer {
+    .companiesCarousel {
+      .logo {
+        max-height: 75px;
+      }
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .companiesContainer {
+    height: auto;
+    .companiesCarousel {
+      flex-wrap: wrap;
+      .logo {
+        margin: 8px;
+      }
+    }
+  }
+}

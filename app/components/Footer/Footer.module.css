@@ -1,0 +1,21 @@
+.footerContainer {
+  background-color: #0f0f0f;
+  height: 150px;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  .socials {
+    display: flex;
+    gap: 12px;
+    .socialLink {
+      margin: 0 0.5rem;
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
