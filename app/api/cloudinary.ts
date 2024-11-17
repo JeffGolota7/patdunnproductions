@@ -9,7 +9,8 @@ cloudinary.config({
 export async function fetchImages() {
   const result = await cloudinary.api.resources({
     type: "upload",
-    max_results: 100,
+    tags: true,
+    max_results: 500,
     transformations: "q_auto,f_auto,c_fill,g_face,w_400,ar_1",
   });
 

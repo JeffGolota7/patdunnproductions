@@ -24,17 +24,32 @@ export function Gallery() {
       const newPhotos = photos.resources.filter((photo) => {
         const assetPath = photo.asset_folder.split("/");
         const category =
+          assetPath !== "" &&
           assetPath[assetPath.length - 1].charAt(0).toUpperCase() +
-          assetPath[assetPath.length - 1].slice(1);
+            assetPath[assetPath.length - 1].slice(1);
 
         return filters.includes(category);
       });
 
-      setActivePhotos(newPhotos);
+      const pinned = newPhotos.filter(
+        (photo) => photo.tags && photo.tags.length > 0
+      );
+      const unpinned = newPhotos.filter(
+        (photo) => !photo.tags || photo.tags.length === 0
+      );
+
+      setActivePhotos([...pinned, ...unpinned]);
     } else {
       const newPhotos = [...photos.resources];
 
-      setActivePhotos(newPhotos);
+      const pinned = newPhotos.filter(
+        (photo) => photo.tags && photo.tags.length > 0
+      );
+      const unpinned = newPhotos.filter(
+        (photo) => !photo.tags || photo.tags.length === 0
+      );
+
+      setActivePhotos([...pinned, ...unpinned]);
     }
   }, [filters]);
 

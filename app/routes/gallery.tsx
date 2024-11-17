@@ -20,14 +20,17 @@ export async function loader() {
 
   const categories = photos.resources.map((photo) => {
     const filePath = photo.asset_folder.split("/");
-    return (
-      filePath[filePath.length - 1].charAt(0).toUpperCase() +
-      filePath[filePath.length - 1].slice(1)
-    );
+
+    if (photo.asset_folder !== "") {
+      return (
+        filePath[filePath.length - 1].charAt(0).toUpperCase() +
+        filePath[filePath.length - 1].slice(1)
+      );
+    }
   });
 
   const newCategories = categories.reduce((accumulator, value) => {
-    if (!accumulator.includes(value)) {
+    if (!accumulator.includes(value) && value) {
       accumulator.push(value);
     }
     return accumulator;
