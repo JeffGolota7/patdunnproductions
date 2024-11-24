@@ -2,8 +2,6 @@ import { json, type MetaFunction } from "@remix-run/node";
 import { fetchPhotosByFolder, fetchVideos } from "~/api/cloudinary";
 import Hero from "~/components/Home/Hero/Hero";
 
-import { cacheClientLoader } from "remix-client-cache";
-import { ClientLoaderFunctionArgs } from "@remix-run/react";
 import { Videos } from "~/components/Home/Videos/Videos";
 import { About } from "~/components/Home/About/About";
 import { Showcase } from "~/components/Home/Showcase/Showcase";
@@ -28,11 +26,6 @@ export async function loader() {
     { headers: { "Cache-Control": "max-age=3600, public" } }
   );
 }
-
-export const clientLoader = (args: ClientLoaderFunctionArgs) =>
-  cacheClientLoader(args);
-
-clientLoader.hydrate = true;
 
 export default function Index() {
   return (

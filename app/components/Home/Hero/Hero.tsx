@@ -1,11 +1,10 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import styles from "./Hero.module.css";
-import { useCachedLoaderData } from "remix-client-cache";
 import { loader } from "~/routes/_index";
 import { useMemo, useState } from "react";
 
 export default function Hero() {
-  const { photos } = useCachedLoaderData<typeof loader>();
+  const { photos } = useLoaderData<typeof loader>();
   const [backgroundImg, setBgImg] = useState("");
 
   useMemo(() => {

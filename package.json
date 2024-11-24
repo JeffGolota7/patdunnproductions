@@ -30,7 +30,6 @@
     "react-player": "^2.16.0",
     "react-social-media-embed": "^2.5.13",
     "react-use-measure": "^2.1.1",
-    "remix-client-cache": "^1.0.1",
     "yet-another-react-lightbox": "^3.21.3"
   },
   "devDependencies": {

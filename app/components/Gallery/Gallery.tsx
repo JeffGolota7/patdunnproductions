@@ -1,4 +1,3 @@
-import { useCachedLoaderData } from "remix-client-cache";
 import { loader } from "~/routes/gallery";
 
 import styles from "./Gallery.module.css";
@@ -9,15 +8,18 @@ import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
 import { motion } from "framer-motion";
 import React from "react";
+import { useLoaderData } from "@remix-run/react";
 
 export function Gallery() {
-  const { photos, videos, categories } = useCachedLoaderData<typeof loader>();
-  const [activePhotos, setActivePhotos] = useState(photos || []);
+  const { photos, videos, categories } = useLoaderData<typeof loader>();
+  const [activePhotos, setActivePhotos] = useState([]);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [currentMediaIndex, toggleCurrentMediaIndex] = useState(0);
   const [filters, updateFilters] = useState([]);
 
   const currentMedia = ["Photo", "Video"];
+
+  // console.log("active photos", activePhotos);
 
   useEffect(() => {
     if (filters.length > 0 && photos) {
@@ -48,6 +50,11 @@ export function Gallery() {
       const unpinned = newPhotos.filter(
         (photo) => !photo.tags || photo.tags.length === 0
       );
+
+      // console.log("pinned", pinned);
+      // console.log("unpinned", unpinned);
+
+      // console.log("newPhotos", newPhotos);
 
       setActivePhotos([...pinned, ...unpinned]);
     }

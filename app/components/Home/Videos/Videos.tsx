@@ -1,10 +1,10 @@
-import { useCachedLoaderData } from "remix-client-cache";
+import { useLoaderData } from "@remix-run/react";
 import { loader } from "~/routes/_index";
 
 import styles from "./Videos.module.css";
 
 export function Videos() {
-  const { videos } = useCachedLoaderData<typeof loader>();
+  const { videos } = useLoaderData<typeof loader>();
 
   return (
     <div className={styles.videoCarousel}>

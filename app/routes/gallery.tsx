@@ -17,6 +17,7 @@ export const meta: MetaFunction = () => {
 
 export async function loader() {
   const [photos, videos] = await Promise.all([fetchImages(), fetchVideos()]);
+  console.log("length", photos.resources.length);
 
   const categories = photos.resources.map((photo) => {
     const filePath = photo.asset_folder.split("/");
@@ -38,13 +39,6 @@ export async function loader() {
 
   return json({ photos, videos, categories: newCategories });
 }
-
-const { adapter } = createCacheAdapter(() => localStorage);
-
-export const clientLoader = (args: ClientLoaderFunctionArgs) =>
-  cacheClientLoader(args, { adapter });
-
-clientLoader.hydrate = true;
 
 export default function Gallery() {
   return (
