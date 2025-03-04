@@ -19,8 +19,6 @@ export function Gallery() {
 
   const currentMedia = ["Photo", "Video"];
 
-  // console.log("active photos", activePhotos);
-
   useEffect(() => {
     if (filters.length > 0 && photos) {
       const newPhotos = photos.resources.filter((photo) => {
@@ -50,11 +48,6 @@ export function Gallery() {
       const unpinned = newPhotos.filter(
         (photo) => !photo.tags || photo.tags.length === 0
       );
-
-      // console.log("pinned", pinned);
-      // console.log("unpinned", unpinned);
-
-      // console.log("newPhotos", newPhotos);
 
       setActivePhotos([...pinned, ...unpinned]);
     }
@@ -144,7 +137,7 @@ export function Gallery() {
         index={activeIndex}
         open={activeIndex >= 0}
         close={() => setActiveIndex(-1)}
-        slides={photos.resources.map((photo) => ({
+        slides={activePhotos.map((photo) => ({
           src: photo.url,
         }))}
       />

@@ -17,7 +17,6 @@ export const meta: MetaFunction = () => {
 
 export async function loader() {
   const [photos, videos] = await Promise.all([fetchImages(), fetchVideos()]);
-  console.log("length", photos.resources.length);
 
   const categories = photos.resources.map((photo) => {
     const filePath = photo.asset_folder.split("/");
